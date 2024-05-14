@@ -18,8 +18,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
         LOGGER.info("start insert fill ....");
         this.setFieldValByName("gmtCreate", new Date(),metaObject);
         this.setFieldValByName("gmtModified", new Date(),metaObject);
-//        this.setFieldValByName("version", 1, metaObject);
-        this.setFieldValByName("isDeleted", 0,metaObject);
     }
 
     @Override

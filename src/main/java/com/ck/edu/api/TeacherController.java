@@ -10,9 +10,11 @@ import com.ck.edu.utils.R;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.ws.rs.POST;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/teacher")
 public class TeacherController {
 
@@ -38,8 +40,12 @@ public class TeacherController {
     @PostMapping("/save")
     public R save(
         @RequestBody EduTeacher teacher){
-        eduTeacherService.save(teacher);
-        return R.ok();
+        boolean save = eduTeacherService.save(teacher);
+        if(save) {
+            return R.ok();
+        } else {
+            return R.error();
+        }
     }
 
     @GetMapping("{id}")
@@ -57,6 +63,21 @@ public class TeacherController {
         eduTeacherService.updateById(teacher);
         return R.ok();
     }
+
+    @DeleteMapping("{id}")
+    public R delById(
+            @PathVariable String id){
+        boolean b = eduTeacherService.removeById(id);
+        if(b) {
+            return R.ok();
+        } else {
+            return R.error();
+        }
+    }
+
+
+
+
 
 
 

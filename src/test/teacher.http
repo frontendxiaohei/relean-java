@@ -8,3 +8,19 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8001/teacher/1
+
+
+### save
+POST http://localhost:8001/teacher/save
+Content-Type: application/json
+
+{
+  "name": "陈琨",
+  "level": 1,
+  "sort": 1,
+  "career": "十年经验",
+  "avatar": "hdd",
+  "gmtModified": "2024-11-15 21:47:12",
+  "gmtCreate": "2024-11-15 21:47:12",
+  "isDeleted": 0
+}
