@@ -1,0 +1,33 @@
+GET http://localhost:8080/user/findAll
+
+
+### 添加用户
+
+POST http://localhost:8080/user/add
+Content-Type: application/json
+
+{
+  "name": "曹大慧",
+  "age": 18,
+  "email": "211@qq.com"
+}
+
+### 更新用户
+POST http://localhost:8080/user/udp
+Content-Type: application/json
+
+{
+  "id":8,
+  "name": "曹大慧",
+  "age": 1920,
+  "email": "211@qq.com"
+}
+
+### 根据id查
+GET http://localhost:8080/user/id/7
+
+### 批量id
+GET http://localhost:8080/user/ids?ids[]=1&ids[]=2
+
+### 分页查
+GET http://localhost:8080/user/page/2/3
