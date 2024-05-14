@@ -16,15 +16,15 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         LOGGER.info("start insert fill ....");
-        this.setFieldValByName("createTime", new Date(),metaObject);
-        this.setFieldValByName("updateTime", new Date(),metaObject);
-        this.setFieldValByName("version", 1, metaObject);
-        this.setFieldValByName("deleted", 0,metaObject);
+        this.setFieldValByName("gmtCreate", new Date(),metaObject);
+        this.setFieldValByName("gmtModified", new Date(),metaObject);
+//        this.setFieldValByName("version", 1, metaObject);
+        this.setFieldValByName("isDeleted", 0,metaObject);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
         LOGGER.info("start update fill ....");
-        this.setFieldValByName("updateTime", new Date(),metaObject);
+        this.setFieldValByName("gmtModified", new Date(),metaObject);
     }
 }
